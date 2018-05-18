@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pizza Form - Final Project</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src="scripts/script.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="mx-auto">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			  <a class="nav-link" href="#"><b>Home</b><span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			  <a class="nav-link" href="#"><b>Menu</b></a>
+		  </li>
+		  <li class="nav-item">
+			  <a class="nav-link" href="#"><b>About Us</b></a>
+		  </li>
+		  <li class="nav-item">
+			  <a class="nav-link" href="#"><b>Specials</b></a>
+		  </li>
+		  <li class="nav-item">
+			  <a class="nav-link" href="#"><b>Rewards</b></a>
+		  </li>
+		  <li class="nav-item">
+			  <a class="nav-link" href="#"><b>Careers</b></a>
+		  </li>
+		   <li class="nav-item">
+			  <a class="nav-link" href="#"><b>Contact</b></a>
+		  </li>			  
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	  </div>
+</nav>
+	<div class="card bg-dark text-white">
+  	<img class="card-img" src="images/pizzapic1.jpg" alt="Card image">
+  	<div class="card-img-overlay">
+    <h2 class="card-title">Welcome To Siri Pizza House</h2>   
+  </div>
+  </div>
+  <div class="form">
+  
+  <form>
+  
+  	<div class="row">
+  		<div class="col-sm-6">
+			<h2 class="text-center">Delivery Location</h2>
+  		  <div class="form-group">
+  		  	<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Customer Name">
+		  </div>
+		  
+		  <div class="form-group">
+			<label for="addressType">Address Type </label>
+			<select class="form-control" name="address" id="addressType" onchange="checkOptions(this.value);">
+			  <option>Select Address Type</option>
+			  <option>House</option>
+			  <option>Apartment</option>
+			  <option>Business</option>
+			  <option>Campus</option>
+			  <option>Hotel</option>
+			  <option>Dorm</option>
+			  <option>Other</option>
+			</select>
+			<input type="text" class="form-control" id="address" name="address" style="display:none;" />
+   		</div>
+   		
+   		<div class="form-group">
+		  <label for="streetAddress">Street Address</label>
+		  <input type="text" class="form-control" id="streetAddress" placeholder="Street Address">
+	   </div>
+	   
+	   <div class="form-group">
+		   <label for="apartmentNumber">Apartment Number/Suite/Room Number</label>
+		   <input type="text" class="form-control" id="apartmentNumber" placeholder="Room Number">
+	   </div> 
+
+	  <div class="form-group">
+		<label for="city">City</label>
+		<input type="text" class="form-control" id="city" placeholder="City">
+	  </div>
+
+	   <div class="form-group">
+		<label for="state">State</label>
+		<input type="text" class="form-control" id="state" placeholder="State">
+	   </div>
+
+	   <div class="form-group">
+		<label for="zipCode">Zip Code</label>
+		<input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
+	   </div>
+
+	   <div class="form-group">
+		<label for="phoneNumber">Phone Number</label>
+		<input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+	   </div>
+
+	   <div class="form-group">
+		<label for="email">Email Address</label>
+		<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Address">
+		<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	  </div>
+     
+  	</div><!-- end of class col-sm-6 -->
+  	
+ <div class="col-sm-6">
+  	<!--- total -->
+  	<div id="total">
+  	<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">Total Price: $</div>
+    <input type="text" class="form-control" id="totalPrice" placeholder="Total Price" readonly>
+  </div>
+  </div>
+  
+ <!-- Bulid Pizza-->
+ 
+ 	<h2 class="text-center">Bulid Your Own Pizza</h2>
+ 	<div id="bulidPizza">
+ <fieldset>		
+    <legend><bold>Pizza Crust</bold></legend>
+   
+    <div class="form-check">
+    <label class="form-check-label" for="handTossed">
+	  <input class="form-check-input" type="radio" name="optdough" id="handTossed" value="Hand Tossed Pizza">	  
+		Hand Tossed
+	  </label>
+	</div>
+	
+	<div class="form-check">
+	  <label class="form-check-label" for="thinCrust">	  
+	  <input class="form-check-input" type="radio" name="optdough" id="thinCrust" value="Thin Crust Pizza">	  
+		Thin Crust
+	  </label>
+	</div>
+	<div class="form-check">
+      <label class="form-check-label" for="newYorkStyle">
+	  <input class="form-check-input" type="radio" name="optdough" id="newYorkStyle" value="NewYork Style Pizza">  
+		New York Style
+	  </label>
+	</div>
+	<div class="form-check">
+  	<label class="form-check-label" for="glutenFree">
+	  <input class="form-check-input" type="radio" name="optdough" id="glutenFree" value="Gluten Free pizza">	  
+		Gluten Free
+	  </label>
+	</div>			
+</fieldset>
+	 
+<div class="form-group">
+	<label for="sizeCost"><strong>Size and Cost</strong></label>
+	<select class="form-control" id="sizeCost">
+	  <option value="0">Chosee pizza crust for sizes and prizes...</option>
+	</select>
+ </div>
+  
+   <div class="form-group">
+		<label for="cheeseOptions"><strong>Cheese Options</strong></label>
+		<select class="form-control" id="cheeseOptions">
+		  <option value="0">Light: no charge</option>
+		  <option value="0">Normal (default): no charge</option>
+		  <option value="2.99">Extra: +$2.99</option>
+		  <option value="3.99">Double: +$3.99</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="sauceOptions"><strong>Sauce Options</strong></label>
+		<select class="form-control" id="sauceOptions">
+		  <option value="0">Regular Tomato: no charge</option>
+		  <option value="0.99">Hearty Tomato: +$.99</option>
+		  <option value="1.99">BBQ Sauce: +$1.99</option>
+		</select>
+	</div>
+	</div>
+	<div id ="toppings">
+	<fieldset>
+	<legend>Toppings(each $0.99 extra)</legend>
+	<h6 class="h6">Veg Toppings</h6>
+	
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="peppers" value="peppers">Peppers
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="olives" value="olives">Olives
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="jalapenos" value="jalapenos">Jalapenos
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="mushrooms" value="mushrooms">Mushrooms
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="pineapple" value="pineapple">Pineapple
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="onion" value="onion">Onion
+	   </label>
+	</div>
+		
+	
+	<h6 class="h6">Non-Veg Toppings</h6>
+	
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="pepperoni" value="pepperoni">Pepperoni
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="sausage" value="sausage">Sausage
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="ham" value="ham">Ham
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="bacon" value="bacon">Bacon
+	   </label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <label class="form-check-label">
+		<input type="checkbox" class="form-check-input" id="salami" value="salami">Salami
+	   </label>
+	</div>		 
+	</fieldset>
+	 </div>	
+		
+    <div class="text-center">
+	 <a id="conformation"><button type="submit" class="btn btn-light">Finished Building Pizza</button></a>
+    </div>
+    </div><!-- end of col-sm-6 --> 	
+ 	</div><!-- end of row -->
+ 	
+  	<div id="billing" style="display: none;">
+  	
+  	
+    <div class="row">
+  		<div class="col-sm-6">
+  		<h2 class="text-center">Billing Information</h2>
+  		<div class="form-group has-success">
+		<label class="custom-control custom-checkbox" id="checkbox1">
+			<input type="checkbox" class="custom-control-input">
+			<span class="custom-control-indicator"></span>
+			<span class="custom-control-description">Check this custom checkbox</span>
+		  </label>
+        </div>
+			
+  		  <div class="form-group">
+  		  	<label for="name">Name</label>
+			<input type="text" class="form-control" id="name1" placeholder="Customer Name">
+		  </div>
+     
+         <div class="form-group">
+                <label for="addressType">Address Type </label>
+                <select class="form-control" name="address" id="addressType1" onchange="checkOptions1(this.value);">
+                  <option>Select Address Type</option>
+                  <option>House</option>
+                  <option>Apartment</option>
+                  <option>Business</option>
+                  <option>Campus</option>
+                  <option>Hotel</option>
+                  <option>Dorm</option>
+                  <option>Other</option>
+                </select>
+                <input type="text" class="form-control" id="address1" name="address" style="display:none;" />
+            </div>
+            
+            <div class="form-group">
+		  <label for="streetAddress">Street Address</label>
+		  <input type="text" class="form-control" id="streetAddress1" placeholder="Street Address">
+	   </div>
+     
+     <div class="form-group">
+		   <label for="apartmentNumber">Apartment Number/Suite/Room Number</label>
+		   <input type="text" class="form-control" id="apartmentNumber1" placeholder="Room Number">
+	   </div>
+     
+      <div class="form-group">
+		<label for="city">City</label>
+		<input type="text" class="form-control" id="city1" placeholder="City">
+	  </div>
+     
+     <div class="form-group">
+		<label for="state">State</label>
+		<input type="text" class="form-control" id="state1" placeholder="State">
+	   </div>
+	   
+	   <div class="form-group">
+		<label for="zipCode">Zip Code</label>
+		<input type="text" class="form-control" id="zipCode1" placeholder="Zip Code">
+	   </div>
+	   
+	   <div class="form-group">
+		<label for="phoneNumber">Phone Number</label>
+		<input type="text" class="form-control" id="phoneNumber1" placeholder="Phone Number">
+	   </div>
+	   
+	   <div class="form-group">
+		<label for="email">Email Address</label>
+		<input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Email Address">
+		<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	  </div>      
+       
+        </div><!-- end of billing col-sm-6 -->
+        <div class="col-sm-6">
+            
+        </div>
+     
+      </div>
+      </div>
+      
+	  </form>
+	</div>
+  
+ 
+</body>
+</html>
